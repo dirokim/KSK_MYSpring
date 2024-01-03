@@ -24,7 +24,6 @@ public class RegionController {
 	public String add(HttpServletRequest request) throws Exception{
 	 String	id = request.getParameter("region_id");
 	 String name = request.getParameter("region_name");
-	 	
 	 RegionDTO regionDTO = new  RegionDTO();
 	 regionDTO.setRegion_id(Integer.parseInt(id));
 	 regionDTO.setRegion_name(name);
