@@ -1,4 +1,4 @@
-package com.winter.app.product;
+package com.winter.product;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ProductController {
 	
 	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
-	public String detail(HttpServletRequest request,Model model) {
+	public String detail(HttpServletRequest request,Model model) throws Exception {
 		ProductDAO productDAO = new ProductDAO();
 		ProductDTO productDTO = new ProductDTO();
 		String num = request.getParameter("productNum");
@@ -29,7 +29,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="list",method=RequestMethod.GET)
-	public String list(Model model) {
+	public String list(Model model) throws Exception {
 		ProductDAO productDAO = new ProductDAO();
 		ProductDTO productDTO = new ProductDTO();
 		List<ProductDTO> ar = productDAO.list();

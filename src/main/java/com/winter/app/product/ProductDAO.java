@@ -1,11 +1,11 @@
-package com.winter.app.product;
+package com.winter.product;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.summer.app.util.DBConnector;
+import com.winter.app.util.DBConnector;
 
 public class ProductDAO {
 	

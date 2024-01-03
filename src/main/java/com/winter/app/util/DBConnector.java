@@ -1,4 +1,4 @@
-package com.summer.app.util;
+package com.winter.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ public class DBConnector {
 	public static Connection getConnector() throws Exception {
 		String user="user01";
 		String password="user01";
-		String url="jdbc:oracle:thin:@13.209.35.30:1521:xe";
+		String url="jdbc:oracle:thin:@13.124.85.237:1521:xe";
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 			Class.forName(driver);

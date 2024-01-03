@@ -1,4 +1,4 @@
-package com.winter.app.product;
+package com.winter.product;
 
 public class ProductDTO {
 	private Long productNum;
