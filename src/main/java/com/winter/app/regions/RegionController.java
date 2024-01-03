@@ -43,7 +43,7 @@ public class RegionController {
 		return "commons/result";
 	}
 	
-	@RequestMapping(value="add",method= RequestMethod.POST )
+	@RequestMapping(value="add",method= RequestMethod.GET )
 	public String add() throws Exception{
 		
 		
