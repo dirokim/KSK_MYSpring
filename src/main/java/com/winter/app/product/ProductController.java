@@ -23,7 +23,6 @@ public class ProductController {
 		ProductDAO productDAO = new ProductDAO();
 		ProductDTO productDTO = new ProductDTO();
 		
-		productDAO.list();
 		
 		return null;
 	}
