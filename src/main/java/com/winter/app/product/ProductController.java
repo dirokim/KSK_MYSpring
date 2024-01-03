@@ -35,6 +35,8 @@ public class ProductController {
 		List<ProductDTO> ar = productDAO.list();
 		model.addAttribute("list",ar);
 		
+
 		return "product/list";
+
 	}
 }
