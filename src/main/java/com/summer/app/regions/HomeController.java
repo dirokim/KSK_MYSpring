@@ -1,4 +1,4 @@
-package com.winter.app;
+package com.summer.app.regions;
 
 import java.text.DateFormat;
 import java.util.Date;
