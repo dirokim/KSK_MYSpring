@@ -1,4 +1,4 @@
-package com.winter.app;
+package com.summer.app;
 
 import static org.junit.Assert.*;
 

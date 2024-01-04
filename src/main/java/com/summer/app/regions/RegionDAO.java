@@ -1,4 +1,4 @@
-package com.winter.app.regions;
+package com.summer.app.regions;
 
 import java.security.spec.PSSParameterSpec;
 import java.sql.Connection;

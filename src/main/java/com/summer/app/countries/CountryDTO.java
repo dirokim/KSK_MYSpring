@@ -1,4 +1,4 @@
-package com.winter.app.countries;
+package com.summer.app.countries;
 
 public class CountryDTO {
 

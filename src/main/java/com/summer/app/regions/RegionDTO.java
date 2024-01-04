@@ -1,4 +1,4 @@
-package com.winter.app.regions;
+package com.summer.app.regions;
 
 public class  RegionDTO {
 	
