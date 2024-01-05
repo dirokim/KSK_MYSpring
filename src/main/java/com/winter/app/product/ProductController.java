@@ -1,10 +1,11 @@
-package com.winter.product;
+
 
 import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/product/*")
 public class ProductController {
 	
+	@Autowired
+	private ProductDAO productDAO;	
 	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
 	public String detail(HttpServletRequest request,Model model) throws Exception {
