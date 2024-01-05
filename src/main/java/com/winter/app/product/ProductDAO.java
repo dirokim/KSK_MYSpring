@@ -5,9 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+
 import com.winter.app.util.DBConnector;
 
+
+@Repository
 public class ProductDAO {
+	
+	
+	
+	
+	
 	
 	//c리스트 r추가 u수정하기 d삭제하기 
 	public int delete() {
