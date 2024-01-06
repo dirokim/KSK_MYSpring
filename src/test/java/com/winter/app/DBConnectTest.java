@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class DBConnectTest {
+public class DBConnectTest extends MyTest {
 
 	@Autowired
 	private DataSource dataSource;
