@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.winter.app.util.DBConnector;
@@ -13,9 +16,9 @@ import com.winter.app.util.DBConnector;
 @Repository
 public class ProductDAO {
 	
-	
-	
-	
+	@Autowired
+	private SqlSession sqlSeesion;
+	private final String namespace = "com.winter.app.product";
 	
 	
 	//c리스트 r추가 u수정하기 d삭제하기 
@@ -35,48 +38,13 @@ public class ProductDAO {
 		
 		return 0;
 	}
+	
+	
 	public ProductDTO detail(ProductDTO productDTO) throws Exception{
-		Connection con = DBConnector.getConnector();
-		String sql = "SELECT * FROM PRODUCT WHERE PRODUCTNUM = ?";
-		PreparedStatement st = con.prepareStatement(sql);
-		
-		st.setLong(1, productDTO.getProductNum());
-		
-		ResultSet rs = st.executeQuery();
-		
-		productDTO = null;
-		while(rs.next()){
-			productDTO = new ProductDTO();
-			productDTO.setProductNum(rs.getLong("PRODUCTNUM"));
-			productDTO.setProductName(rs.getString("PRODUCTNAME"));
-			productDTO.setProductContents(rs.getString("PRODUCTCONTENTS"));
-			productDTO.setProductRate(rs.getDouble("PRODUCTRATE"));
-			productDTO.setProductJumsu(rs.getDouble("PRODUCTJUMSU"));
-		}
-		
-		DBConnector.disConnect(rs, st, con);
-		return productDTO;
+		 return  sqlSeesion.selectOne(namespace+"detail",productDTO);
 	}
 	
-	public ArrayList<ProductDTO> list() throws Exception{
-		Connection con = DBConnector.getConnector();
-		String sql = "SELET * FROM PRODUCT";
-		PreparedStatement st = con.prepareStatement(sql);
-		
-		ResultSet rs = st.executeQuery();
-		
-		ArrayList<ProductDTO> ar = new ArrayList(); 
-		while(rs.next()){
-			ProductDTO productDTO = new ProductDTO();
-			productDTO.setProductNum(rs.getLong("PRODUCTNUM"));
-			productDTO.setProductName(rs.getString("PRODUCTNAME"));
-			productDTO.setProductContents(rs.getString("PRODUCTCONTENTS"));
-			productDTO.setProductRate(rs.getDouble("PRODUCTRATE"));
-			productDTO.setProductJumsu(rs.getDouble("PRODUCTJUMSU"));
-			ar.add(productDTO);
-		}
-		
-		DBConnector.disConnect(rs, st, con);
-		return ar;
+	public List<ProductDTO> list() throws Exception{
+		return	 sqlSeesion.selectList(namespace+"lsit");
 	}
 }
