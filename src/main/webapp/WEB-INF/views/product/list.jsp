@@ -34,7 +34,7 @@
 		</c:forEach>
 		
 	</table>
-	
+	<button type="submit" class="btn btn-primary">Add</button>
 	<c:import url="../temps/bpptStrap_js.jsp"></c:import>
 </body>
 </html>

@@ -22,17 +22,17 @@ public class ProductDAO {
 	
 	
 	//c리스트 r추가 u수정하기 d삭제하기 
-	public int delete() {
-		return 0;
+	public int delete(ProductDTO productDTO) throws Exception {
+		return sqlSeesion.delete(namespace+"delete",productDTO);
 		
 	}
-	public int update() {
-		return 0;
+	public int update(ProductDTO productDTO) throws Exception {
+		return sqlSeesion.update(namespace+"update",productDTO);
 		
 	}
-	public int add() throws Exception{
-
-		return 0;
+	public int add(ProductDTO productDTO) throws Exception{
+		return	sqlSeesion.insert(namespace+"add",productDTO);
+		
 	}
 	
 	

@@ -23,8 +23,19 @@ public class ProductController {
 	private ProductService productService;
 	
 	
+	@RequestMapping(value="add",method=RequestMethod.POST)
+	public String add(ProductDTO productDTO,Model model) throws Exception {
+		int result = productService.getAdd(productDTO);
 	
-		
+		 String msg = "추가 실패";
+		 if(result>0) {
+			 msg="추가 성공";
+		 }
+		 model.addAttribute("msg",msg);
+		 model.addAttribute("path", "./list");
+		 return "commons/result";
+	}
+	
 	@RequestMapping(value="detail",method=RequestMethod.POST)
 	public void detail()throws Exception {
 		
