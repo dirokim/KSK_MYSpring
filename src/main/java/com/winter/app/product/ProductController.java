@@ -22,12 +22,12 @@ public class ProductController {
 	private ProductService productService;
 	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
-	public String detail(HttpServletRequest request,Model model) throws Exception {
-		ProductDAO productDAO = new ProductDAO();
+	public String detail(ProductDTO productDTO,Model model) throws Exception {
+
 		ProductDTO productDTO = new ProductDTO();
-		String num = request.getParameter("productNum");
-		productDTO.setProductNum(Long.parseLong(num));
-		productDTO = productDAO.detail(productDTO);
+		
+		productDTO.setProductNum(productDTO);
+		productDTO = productService.getDetail(productDTO);
 		
 		
 		model.addAttribute("detail",productDTO);

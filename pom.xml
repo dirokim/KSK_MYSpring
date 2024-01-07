@@ -21,12 +21,15 @@
    	 <artifactId>ojdbc10</artifactId>
    	 <version>19.21.0.0</version>
 	</dependency>
+	
+	<!--  mybatis-->
 	   		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>
 		    <version>3.5.9</version>
 		</dependency>
 	   
+	   <!-- mybatis-spring -->
 	   		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>

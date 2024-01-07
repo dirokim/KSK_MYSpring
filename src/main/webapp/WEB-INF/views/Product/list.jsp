@@ -8,13 +8,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
 	<c:import url="../temps/bootStrap_css.jsp"></c:import>
-	<c:import url="../temps/bpptStrap_js.jsp"></c:import>
+<body>
 	<c:import url="../temps/header.jsp"></c:import>
 	
 	
-	<table>
+	<table border=1>
 		<tr>
 			<th>ProductNum</th>
 			<th>ProductName</th>
@@ -36,6 +35,6 @@
 		
 	</table>
 	
-
+	<c:import url="../temps/bpptStrap_js.jsp"></c:import>
 </body>
 </html>
