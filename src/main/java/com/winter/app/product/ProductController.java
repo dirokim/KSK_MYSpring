@@ -18,6 +18,8 @@ public class ProductController {
 	
 	@Autowired
 	private ProductDAO productDAO;	
+	@Autowired
+	private ProductService productService;
 	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
 	public String detail(HttpServletRequest request,Model model) throws Exception {
@@ -34,13 +36,10 @@ public class ProductController {
 	
 	@RequestMapping(value="list",method=RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		ProductDAO productDAO = new ProductDAO();
-		ProductDTO productDTO = new ProductDTO();
-		List<ProductDTO> ar = productDAO.list();
-		model.addAttribute("list",ar);
+
+		List<ProductDTO> ar = productService.getList();
 		
-
+		model.addAttribute("list",ar);
 		return "product/list";
-
 	}
 }
