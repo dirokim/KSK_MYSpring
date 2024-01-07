@@ -34,9 +34,26 @@ public class ProductController {
 	 return "commons/result";
 	}
 	
-	public void update() {
+	@RequestMapping(value="update",method=RequestMethod.POST)
+	public ModelAndView update(ProductDTO productDTO,ModelAndView mv) throws Exception {
+		int result = productService.getUpdate(productDTO);
+		String msg = "수정 실패";
+		if(result>0) {
+			msg = "수정 성공";		
+			}
+		mv.addObject("msg",msg);
+		mv.addObject("path","./list");
 		
+		mv.setViewName("commons/result");
+		return mv;
 	}
+	
+	@RequestMapping(value="update",method=RequestMethod.GET)
+	public void update (ProductDTO productDTO,Model model) throws Exception {
+		productDTO = productService.getDetail(productDTO);
+		model.addAttribute("dto",productDTO);
+	}
+	
 	
 	
 	@RequestMapping(value="add",method=RequestMethod.POST)
@@ -52,10 +69,7 @@ public class ProductController {
 		 return "commons/result";
 	}
 	
-	@RequestMapping(value="detail",method=RequestMethod.POST)
-	public void detail( )throws Exception {
-		
-	}
+
 	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
 	public String detail(Long productNum,Model model) throws Exception {
