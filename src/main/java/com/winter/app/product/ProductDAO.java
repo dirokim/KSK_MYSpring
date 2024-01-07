@@ -31,11 +31,7 @@ public class ProductDAO {
 		
 	}
 	public int add() throws Exception{
-		Connection con = DBConnector.getConnector();
-		String sql = "INSERT INTO PRODUCT VALUES(?,?,?,?,?)";
-		
-		
-		
+
 		return 0;
 	}
 	
