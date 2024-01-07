@@ -9,7 +9,7 @@
 </head>
 	<c:import url="../temps/bootStrap_css.jsp"></c:import>
 	<c:import url="../temps/bpptStrap_js.jsp"></c:import>
-	<c:import url="../temps/header.jsp"></c:import>
+
 <body>
 	<div>
 		<c:if test="${not empty dto}">
@@ -27,6 +27,6 @@
 	</div>
 
 
-	
+		<c:import url="../temps/header.jsp"></c:import>
 </body>
 </html>

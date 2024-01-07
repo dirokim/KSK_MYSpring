@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value="/product/*")
@@ -21,25 +22,30 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	
+	
+		
+	@RequestMapping(value="detail",method=RequestMethod.POST)
+	public void detail()throws Exception {
+		
+	}
+	
 	@RequestMapping(value="detail",method=RequestMethod.GET)
-	public String detail(ProductDTO productDTO,Model model) throws Exception {
-
+	public String detail(Long productNum,Model model) throws Exception {
 		ProductDTO productDTO = new ProductDTO();
-		
-		productDTO.setProductNum(productDTO);
+		productDTO.setProductNum(productNum);
 		productDTO = productService.getDetail(productDTO);
-		
-		
-		model.addAttribute("detail",productDTO);
+		model.addAttribute("dto",productDTO);
 		return "product/detail";	
 	}
 	
 	@RequestMapping(value="list",method=RequestMethod.GET)
-	public String list(Model model) throws Exception {
-
+	public ModelAndView list() throws Exception {
+		ModelAndView mv = new ModelAndView();
 		List<ProductDTO> ar = productService.getList();
 		
-		model.addAttribute("list",ar);
-		return "product/list";
+		mv.addObject("list",ar);
+		mv.setViewName("product/list");
+		return mv;
 	}
 }
