@@ -26,7 +26,6 @@ public class ProductService {
 	}
 	
 	public ProductDTO getDetail (ProductDTO productDTO) throws Exception {
-	
 		return productDAO.detail(productDTO);
 	}
 	
