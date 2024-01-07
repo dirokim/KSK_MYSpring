@@ -23,6 +23,9 @@ public class ProductController {
 	private ProductService productService;
 	
 	
+	
+	
+	
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	public String add(ProductDTO productDTO,Model model) throws Exception {
 		int result = productService.getAdd(productDTO);
@@ -37,7 +40,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="detail",method=RequestMethod.POST)
-	public void detail()throws Exception {
+	public void detail( )throws Exception {
 		
 	}
 	
