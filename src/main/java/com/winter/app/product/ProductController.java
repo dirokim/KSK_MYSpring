@@ -22,8 +22,21 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	public String delete(ProductDTO productDTO , Model model) throws Exception {
+	 int result =productDAO.delete(productDTO);
+	 String msg2 = "삭제 실패";
+	 if(result>0) {
+		 msg2="삭제 성공";
+		 model.addAttribute("msg",msg2);
+		 model.addAttribute("path", "./list");
+		  }
+	 
+	 return "commons/result";
+	}
 	
-	
+	public void update() {
+		
+	}
 	
 	
 	@RequestMapping(value="add",method=RequestMethod.POST)
